@@ -7,10 +7,13 @@ from flask_appbuilder.security.manager import (
     AUTH_OAUTH,
 )
 
+from os import urandom
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Your App secret key
-SECRET_KEY = "\2\1thisismyscretkey\1\2\e\y\y\h"
+# SECRET_KEY = "\2\1thisismyscretkey\1\2\e\y\y\h"
+SECRET_KEY = urandom(32)
 
 # The SQLAlchemy connection string.
 SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "app.db")
@@ -24,10 +27,10 @@ CSRF_ENABLED = True
 # GLOBALS FOR APP Builder
 # ------------------------------
 # Uncomment to setup Your App name
-# APP_NAME = "My App Name"
+APP_NAME = "OSGS"
 
 # Uncomment to setup Setup an App icon
-# APP_ICON = "static/img/logo.jpg"
+APP_ICON = "static/osgs.png"
 
 # ----------------------------------------------------
 # AUTHENTICATION CONFIG
@@ -70,25 +73,19 @@ BABEL_DEFAULT_FOLDER = "translations"
 # The allowed translation for you app
 LANGUAGES = {
     "en": {"flag": "gb", "name": "English"},
-    "pt": {"flag": "pt", "name": "Portuguese"},
-    "pt_BR": {"flag": "br", "name": "Pt Brazil"},
-    "es": {"flag": "es", "name": "Spanish"},
-    "de": {"flag": "de", "name": "German"},
-    "zh": {"flag": "cn", "name": "Chinese"},
-    "ru": {"flag": "ru", "name": "Russian"},
-    "pl": {"flag": "pl", "name": "Polish"},
+    "pt": {"flag": "pt", "name": "Português"},
 }
 # ---------------------------------------------------
 # Image and file configuration
 # ---------------------------------------------------
 # The file upload folder, when using models with files
-UPLOAD_FOLDER = basedir + "/app/static/uploads/"
+UPLOAD_FOLDER = basedir + "/app/static/media/"
 
 # The image upload folder, when using models with images
-IMG_UPLOAD_FOLDER = basedir + "/app/static/uploads/"
+IMG_UPLOAD_FOLDER = basedir + "/app/static/media/"
 
 # The image upload url, when using models with images
-IMG_UPLOAD_URL = "/static/uploads/"
+IMG_UPLOAD_URL = "/static/media/"
 # Setup image size default is (300, 200, True)
 # IMG_SIZE = (300, 200, True)
 
@@ -100,7 +97,7 @@ IMG_UPLOAD_URL = "/static/uploads/"
 # APP_THEME = "amelia.css"
 # APP_THEME = "cosmo.css"
 # APP_THEME = "cyborg.css"
-# APP_THEME = "flatly.css"
+APP_THEME = "flatly.css"
 # APP_THEME = "journal.css"
 # APP_THEME = "readable.css"
 # APP_THEME = "simplex.css"
