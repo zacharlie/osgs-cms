@@ -1,4 +1,22 @@
+# exclude venv
 ./env/
+
+# fab .gitignore
+*.pyc
+app.db
+./tmp
+./build/*
+.idea
+env
+venv
+*.sublime*
+
+# Explicit ignore files and directories
+*.ignore
+.ignore/*
+
+# Exclude site database, backups, journals, and auxillary content
+*.sqlite*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -129,3 +147,22 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# PyCharm
+.idea
+
+# VSCode
+.vscode
+*.code-workspace
+
+# Python mode for VIM
+.ropeproject
+*/.ropeproject
+*/*/.ropeproject
+*/*/*/.ropeproject
+
+# Vim swap files
+*.swp
+*/*.swp
+*/*/*.swp
+*/*/*/*.swp
