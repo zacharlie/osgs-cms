@@ -49,3 +49,15 @@ These two operations could then be bundled with additional operations, such as t
 Blueprints provide the ability to load, export, create, and manage OSGS Blueprints, which provide task specific workflows and end-to-end solutions, based on the components and expected configuration structure of the OSGS stack.
 
 Blueprints can be `object` blueprints - which are related to a particular task such as creating a new web page, or `solution blueprints` - which are a specific collection of preconfigured blueprints related to a particular end-to-end solution, such as creating a new field survey project for manhole inspections, which is integrated with a preconfigured dashboard, map service, and analytics API.
+
+# Deploy
+
+Needs db with user, so `flask fab create-admin --username admin --firstname system --lastname administrator --email admin@local.host --password supercalifragilisticexpialidocious` and make sure nobody can access the app.db file.
+
+## Developrmentness
+
+the `requirements.txt.bak` made a nice list of deps but setup.py is more usefuller for proper installation and deployerenerment later.
+
+`pip install osgs-sl[development]`
+
+`pip install -e .[development]`
