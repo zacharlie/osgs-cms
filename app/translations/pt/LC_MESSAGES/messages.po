@@ -19,8 +19,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#~ msgid "Page not found"
-#~ msgstr "Página não encontrada"
+#: app/templates/404.html:4
+msgid "Page not found"
+msgstr "Página não encontrada"
 
 #: app/templates/appbuilder/footer.html:5
 msgid "is built by"
