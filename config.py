@@ -8,6 +8,9 @@ from flask_appbuilder.security.manager import (
 )
 
 from os import urandom, environ
+from dotenv import load_dotenv
+
+load_dotenv()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
