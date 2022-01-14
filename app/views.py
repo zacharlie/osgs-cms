@@ -25,14 +25,6 @@ class DefaultPagesView(BaseView):
             appbuilder=appbuilder,
         )
 
-    @expose("/wysiwyg")
-    def wysiwygPage(self):
-        return render_template(
-            "make.html",
-            base_template=appbuilder.base_template,
-            appbuilder=appbuilder,
-        )
-
 
 appbuilder.add_view_no_menu(DefaultPagesView())
 # appbuilder.add_view(DefaultPagesView, "About")

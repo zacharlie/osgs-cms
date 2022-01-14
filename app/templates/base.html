@@ -11,6 +11,9 @@
     {{ super() }}
     <!-- <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script> -->
     <script src="{{url_for('static',filename='js/js.js')}}"></script>
+    <script src="{{url_for('static',filename='js/pagedown/Markdown.Converter.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/pagedown/Markdown.Editor.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/pagedown/Markdown.Sanitizer.min.js')}}"></script>
 {% endblock %}
 
 {% block tail_js %}

@@ -1,0 +1,11 @@
+{% extends "appbuilder/base.html" %}
+{% block content %}
+<head>
+{{ pagedown.include_pagedown() }}
+</head>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.pagedown(rows=10) }}
+        {{ form.submit }}
+    </form>
+{% endblock %}
