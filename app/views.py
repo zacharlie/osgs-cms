@@ -1,50 +1,55 @@
 from flask import render_template
 from flask_appbuilder.models.sqla.interface import SQLAInterface
-from flask_appbuilder import ModelView, ModelRestApi
+from flask_appbuilder import (
+    ModelView,
+    ModelRestApi,
+    AppBuilder,
+    expose,
+    has_access,
+    BaseView,
+)
 
 from . import appbuilder, db
 
-"""
-    Create your Model based REST API::
 
-    class MyModelApi(ModelRestApi):
-        datamodel = SQLAInterface(MyModel)
+# Error codes
 
-    appbuilder.add_api(MyModelApi)
+for errorcode in [
+    item
+    for elem in [
+        [400, 401],
+        range(403, 406 + 1, 1),
+        range(408, 418 + 1, 1),
+        [422, 423, 424, 428, 429, 431, 451],
+        range(500, 505, 1),
+    ]
+    for item in elem
+]:
+    # https://werkzeug-doc.readthedocs.io/en/latest/exceptions.html
 
-
-    Create your Views::
-
-
-    class MyModelView(ModelView):
-        datamodel = SQLAInterface(MyModel)
-
-
-    Next, register your Views::
-
-
-    appbuilder.add_view(
-        MyModelView,
-        "My View",
-        icon="fa-folder-open-o",
-        category="My Category",
-        category_icon='fa-envelope'
-    )
-"""
-
-"""
-    Application wide 404 error handler
-"""
-
-
-@appbuilder.app.errorhandler(404)
-def page_not_found(e):
-    return (
-        render_template(
-            "404.html", base_template=appbuilder.base_template, appbuilder=appbuilder
-        ),
-        404,
-    )
+    @appbuilder.app.errorhandler(errorcode)
+    def error(error):
+        if error.code == 404:
+            return (
+                render_template(
+                    "404.html",
+                    base_template=appbuilder.base_template,
+                    appbuilder=appbuilder,
+                ),
+                404,
+            )
+        else:
+            return (
+                render_template(
+                    "error.html",
+                    base_template=appbuilder.base_template,
+                    appbuilder=appbuilder,
+                    error_code=error.code,
+                    error_description=error.description,
+                    error_name=error.name,
+                ),
+                error.code,
+            )
 
 
 db.create_all()
