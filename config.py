@@ -7,7 +7,7 @@ from flask_appbuilder.security.manager import (
     AUTH_OAUTH,
 )
 
-from os import urandom
+from os import urandom, environ
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -49,7 +49,17 @@ AUTH_ROLE_ADMIN = "Admin"
 AUTH_ROLE_PUBLIC = "Public"
 
 # Will allow user self registration
-AUTH_USER_REGISTRATION = True
+AUTH_USER_REGISTRATION = (
+    environ["AUTH_USER_REGISTRATION"] if "AUTH_USER_REGISTRATION" in environ else False
+)
+
+if AUTH_USER_REGISTRATION:
+    RECAPTCHA_USE_SSL = (
+        environ["RECAPTCHA_USE_SSL"] if "RECAPTCHA_USE_SSL" in environ else False
+    )
+    RECAPTCHA_PUBLIC_KEY = environ["RECAPTCHA_PUBLIC_KEY"]
+    RECAPTCHA_PRIVATE_KEY = environ["RECAPTCHA_PRIVATE_KEY"]
+    RECAPTCHA_OPTIONS = {"theme": "white"}
 
 # The default user self registration role
 AUTH_USER_REGISTRATION_ROLE = "ReadOnly"
