@@ -1,6 +1,9 @@
 # exclude venv
 ./env/
 
+# datadir
+/app/data/
+
 # fab .gitignore
 *.pyc
 app.db
