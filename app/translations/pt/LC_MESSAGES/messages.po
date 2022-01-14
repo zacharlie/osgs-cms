@@ -3,22 +3,25 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
-#, fuzzy
 msgid ""
 msgstr ""
+
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-10-26 13:23+0000\n"
-"PO-Revision-Date: 2015-10-26 13:22+0000\n"
+"POT-Creation-Date: 2022-01-14 18:04+0200\n"
+"PO-Revision-Date: 2022-01-14 17:36+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
 "Language-Team: pt <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: app/templates/404.html:4
-msgid "Page not found"
-msgstr "Página não encontrada"
+#~ msgid "Page not found"
+#~ msgstr "Página não encontrada"
 
+#: app/templates/appbuilder/footer.html:5
+msgid "is built by"
+msgstr "é construído por"

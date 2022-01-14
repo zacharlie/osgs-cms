@@ -1,0 +1,10 @@
+.osgs-footer {
+  /* set fixed footer */
+  position: fixed;
+  height: 3rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  z-index: 1;
+}

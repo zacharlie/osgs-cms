@@ -59,3 +59,9 @@ Needs db with user, so `flask fab create-admin --username admin --firstname syst
 the `requirements.txt.bak` made a nice list of deps but setup.py is more usefuller for proper installation and deployerenerment later.
 
 `pip install -e .[development]`
+
+## i18n
+
+[Docs](https://flask-appbuilder.readthedocs.io/en/latest/i18n.html)
+
+Basically, get strings with `flask fab babel-extract`, translate `./translations/lang/LC_MESSAGES/messages.po` and compile `flask fab babel-compile`.

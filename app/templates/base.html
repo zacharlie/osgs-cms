@@ -1,0 +1,19 @@
+{% extends 'appbuilder/baselayout.html' %}
+
+{% block head_css %}
+    {{ super() }}
+    <!-- Style -->
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/themes/flatly.min.css')}}"></link> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}"></link>
+{% endblock %}
+
+{% block head_js %}
+    {{ super() }}
+    <!-- <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script> -->
+    <script src="{{url_for('static',filename='js/js.js')}}"></script>
+{% endblock %}
+
+{% block tail_js %}
+    {{ super() }}
+    <script src="{{url_for('static',filename='js/tail.js')}}"></script>
+{% endblock %}
