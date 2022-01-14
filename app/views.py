@@ -12,6 +12,23 @@ from flask_appbuilder import (
 from . import appbuilder, db
 
 
+class DefaultPagesView(BaseView):
+    route_base = "/"
+
+    default_view = "aboutPage"
+
+    @expose("/about")
+    def aboutPage(self):
+        return render_template(
+            "about.html",
+            base_template=appbuilder.base_template,
+            appbuilder=appbuilder,
+        )
+
+
+appbuilder.add_view_no_menu(DefaultPagesView())
+# appbuilder.add_view(DefaultPagesView, "About")
+
 # Error codes
 
 for errorcode in [
