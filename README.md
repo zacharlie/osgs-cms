@@ -58,6 +58,4 @@ Needs db with user, so `flask fab create-admin --username admin --firstname syst
 
 the `requirements.txt.bak` made a nice list of deps but setup.py is more usefuller for proper installation and deployerenerment later.
 
-`pip install osgs-sl[development]`
-
 `pip install -e .[development]`
