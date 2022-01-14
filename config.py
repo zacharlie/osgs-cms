@@ -63,6 +63,11 @@ if AUTH_USER_REGISTRATION:
     RECAPTCHA_PUBLIC_KEY = environ["RECAPTCHA_PUBLIC_KEY"]
     RECAPTCHA_PRIVATE_KEY = environ["RECAPTCHA_PRIVATE_KEY"]
     RECAPTCHA_OPTIONS = {"theme": "white"}
+    MAIL_SERVER = environ["MAIL_SERVER"]
+    MAIL_USE_TLS = environ["MAIL_USE_TLS"] if "MAIL_USE_TLS" in environ else True
+    MAIL_USERNAME = environ["MAIL_USERNAME"]
+    MAIL_PASSWORD = environ["MAIL_PASSWORD"]
+    MAIL_DEFAULT_SENDER = environ["MAIL_DEFAULT_SENDER"]
 
 # The default user self registration role
 AUTH_USER_REGISTRATION_ROLE = "ReadOnly"
