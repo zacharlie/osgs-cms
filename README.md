@@ -65,3 +65,12 @@ the `requirements.txt.bak` made a nice list of deps but setup.py is more usefull
 [Docs](https://flask-appbuilder.readthedocs.io/en/latest/i18n.html)
 
 Basically, get strings with `flask fab babel-extract`, translate `./translations/lang/LC_MESSAGES/messages.po` and compile `flask fab babel-compile`.
+
+## Markdown Editor
+
+It's actually exceedingly difficult to find a decent wysiwyg markdown editor. Everything wants to auto-html or requires obscure plugins.
+
+These 2 look promising:
+
+https://www.jqueryscript.net/text/jQuery-Based-WYSIWYG-style-Markdown-Editor-Markdown.html
+https://ckeditor.com/blog/CKEditor-5-the-best-open-source-Markdown-editor/
