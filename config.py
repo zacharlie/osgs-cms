@@ -30,7 +30,7 @@ CSRF_ENABLED = True
 APP_NAME = "OSGS"
 
 # Uncomment to setup Setup an App icon
-APP_ICON = "static/osgs.png"
+APP_ICON = "/static/osgs.svg"
 
 # ----------------------------------------------------
 # AUTHENTICATION CONFIG
@@ -43,16 +43,16 @@ APP_ICON = "static/osgs.png"
 AUTH_TYPE = AUTH_DB
 
 # Uncomment to setup Full admin role name
-# AUTH_ROLE_ADMIN = 'Admin'
+AUTH_ROLE_ADMIN = "Admin"
 
 # Uncomment to setup Public role name, no authentication needed
-# AUTH_ROLE_PUBLIC = 'Public'
+AUTH_ROLE_PUBLIC = "Public"
 
 # Will allow user self registration
-# AUTH_USER_REGISTRATION = True
+AUTH_USER_REGISTRATION = True
 
 # The default user self registration role
-# AUTH_USER_REGISTRATION_ROLE = "Public"
+AUTH_USER_REGISTRATION_ROLE = "User"
 
 # When using LDAP Auth, setup the ldap server
 # AUTH_LDAP_SERVER = "ldap://ldapserver.new"
