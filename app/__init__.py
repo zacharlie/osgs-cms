@@ -3,8 +3,6 @@ import logging
 from flask import Flask
 from flask_appbuilder import AppBuilder, SQLA
 
-from flask_pagedown import PageDown
-
 from app.index import DefaultIndexView
 
 """
@@ -21,7 +19,4 @@ appbuilder = AppBuilder(
     app, db.session, indexview=DefaultIndexView, base_template="base.html"
 )
 
-pagedown = PageDown(app)
-
 from . import views
-from . import forms

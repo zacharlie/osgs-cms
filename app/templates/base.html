@@ -8,12 +8,14 @@
 {% endblock %}
 
 {% block head_js %}
-    {{ super() }}
-    <!-- <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script> -->
+{{ super() }}
     <script src="{{url_for('static',filename='js/js.js')}}"></script>
-    <script src="{{url_for('static',filename='js/pagedown/Markdown.Converter.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/ckeditor5/31.1.0/classic/ckeditor.js')}}"></script>
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script> -->
+    <!-- <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script> -->
+    <!-- <script src="{{url_for('static',filename='js/pagedown/Markdown.Converter.min.js')}}"></script>
     <script src="{{url_for('static',filename='js/pagedown/Markdown.Editor.min.js')}}"></script>
-    <script src="{{url_for('static',filename='js/pagedown/Markdown.Sanitizer.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/pagedown/Markdown.Sanitizer.min.js')}}"></script> -->
 {% endblock %}
 
 {% block tail_js %}

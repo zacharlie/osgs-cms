@@ -4,7 +4,7 @@ setup(
     name="osgs-sl",
     version="0.0.1",
     packages=find_packages(include=[".*"]),
-    install_requires=["Flask-AppBuilder==3.4.3", "Pillow==9.0.0", "flask-pagedown"],
+    install_requires=["Flask-AppBuilder==3.4.3", "Pillow==9.0.0"],
     extras_require={
         "development": ["black", "python-dotenv"],
     },
