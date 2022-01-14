@@ -61,10 +61,23 @@ FAB_ROLES = {
         [".*", "menu_access"],
         [".*", "can_get"],
         [".*", "can_info"],
-    ]
+    ],
+    "ReadWrite": [
+        [".*", "can_list"],
+        [".*", "can_show"],
+        [".*", "can_edit"],
+        [".*", "can_delete"],
+        [".*", "can_download"],
+        [".*", "menu_access"],
+        [".*", "can_get"],
+        [".*", "can_put"],
+        [".*", "can_post"],
+        [".*", "can_delete"],
+        [".*", "can_info"],
+    ],
 }
 
-FAB_ROLES_MAPPING = {1: "ReadOnly"}
+FAB_ROLES_MAPPING = {1: "ReadOnly", 2: "ReadWrite"}
 
 # When using LDAP Auth, setup the ldap server
 # AUTH_LDAP_SERVER = "ldap://ldapserver.new"
