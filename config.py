@@ -52,7 +52,19 @@ AUTH_ROLE_PUBLIC = "Public"
 AUTH_USER_REGISTRATION = True
 
 # The default user self registration role
-AUTH_USER_REGISTRATION_ROLE = "User"
+AUTH_USER_REGISTRATION_ROLE = "ReadOnly"
+
+FAB_ROLES = {
+    "ReadOnly": [
+        [".*", "can_list"],
+        [".*", "can_show"],
+        [".*", "menu_access"],
+        [".*", "can_get"],
+        [".*", "can_info"],
+    ]
+}
+
+FAB_ROLES_MAPPING = {1: "ReadOnly"}
 
 # When using LDAP Auth, setup the ldap server
 # AUTH_LDAP_SERVER = "ldap://ldapserver.new"
