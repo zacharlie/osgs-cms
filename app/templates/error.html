@@ -1,38 +1,30 @@
-{% extends "appbuilder/base.html" %}
-
-{% block content %}
+{% extends "appbuilder/base.html" %} {% block content %}
 <center>
-    <div class="container align-items-center">
-        <div class="row align-items-center">
-            <div class="col-md-4"></div>
-            <h1 class="col-md-4">
-                {{ error_code }}
-            </h1>
-            <div class="col-md-4"></div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-md-4"></div>
-            <h3 class="col-md-4">
-                {{ error_name }}
-            </h3>
-            <div class="col-md-4"></div>
-        </div>
-        <div class="row align-items-center" style="padding: 15px;">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                {{ error_description }}
-            </div>
-            <div class="col-md-4"></div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <a href="/">
-                    <button type="button" class="button btn btn-primary">Home</button>
-                </a>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
+  <div class="container align-items-center">
+    <div class="row align-items-center">
+      <div class="col-md-4"></div>
+      <h1 class="col-md-4">{{ error_code }}</h1>
+      <div class="col-md-4"></div>
     </div>
-<center>
+    <div class="row align-items-center">
+      <div class="col-md-4"></div>
+      <h3 class="col-md-4">{{ error_name }}</h3>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row align-items-center" style="padding: 15px">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">{{ error_description }}</div>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <a href="/">
+          <button type="button" class="button btn btn-primary">Home</button>
+        </a>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</center>
 {% endblock %}
