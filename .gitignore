@@ -7,6 +7,7 @@
 # fab .gitignore
 *.pyc
 app.db
+app.db.bak
 ./tmp
 ./build/*
 .idea
@@ -156,6 +157,7 @@ dmypy.json
 
 # VSCode
 .vscode
+./.vscode/
 *.code-workspace
 
 # Python mode for VIM
