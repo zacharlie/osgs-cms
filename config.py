@@ -8,9 +8,10 @@ from flask_appbuilder.security.manager import (
 )
 
 from os import urandom, environ
-from dotenv import load_dotenv
 
-load_dotenv()
+# from dotenv import load_dotenv
+
+# load_dotenv()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -52,53 +53,53 @@ AUTH_TYPE = AUTH_DB
 AUTH_ROLE_ADMIN = "Admin"
 
 # Uncomment to setup Public role name, no authentication needed
-AUTH_ROLE_PUBLIC = "Public"
+# AUTH_ROLE_PUBLIC = "Public"
 
 # Will allow user self registration
-AUTH_USER_REGISTRATION = (
-    environ["AUTH_USER_REGISTRATION"] if "AUTH_USER_REGISTRATION" in environ else False
-)
+# AUTH_USER_REGISTRATION = (
+#     environ["AUTH_USER_REGISTRATION"] if "AUTH_USER_REGISTRATION" in environ else False
+# )
 
-if AUTH_USER_REGISTRATION:
-    RECAPTCHA_USE_SSL = (
-        environ["RECAPTCHA_USE_SSL"] if "RECAPTCHA_USE_SSL" in environ else False
-    )
-    RECAPTCHA_PUBLIC_KEY = environ["RECAPTCHA_PUBLIC_KEY"]
-    RECAPTCHA_PRIVATE_KEY = environ["RECAPTCHA_PRIVATE_KEY"]
-    RECAPTCHA_OPTIONS = {"theme": "white"}
-    MAIL_SERVER = environ["MAIL_SERVER"]
-    MAIL_USE_TLS = environ["MAIL_USE_TLS"] if "MAIL_USE_TLS" in environ else True
-    MAIL_USERNAME = environ["MAIL_USERNAME"]
-    MAIL_PASSWORD = environ["MAIL_PASSWORD"]
-    MAIL_DEFAULT_SENDER = environ["MAIL_DEFAULT_SENDER"]
+# if AUTH_USER_REGISTRATION:
+#     RECAPTCHA_USE_SSL = (
+#         environ["RECAPTCHA_USE_SSL"] if "RECAPTCHA_USE_SSL" in environ else False
+#     )
+#     RECAPTCHA_PUBLIC_KEY = environ["RECAPTCHA_PUBLIC_KEY"]
+#     RECAPTCHA_PRIVATE_KEY = environ["RECAPTCHA_PRIVATE_KEY"]
+#     RECAPTCHA_OPTIONS = {"theme": "white"}
+#     MAIL_SERVER = environ["MAIL_SERVER"]
+#     MAIL_USE_TLS = environ["MAIL_USE_TLS"] if "MAIL_USE_TLS" in environ else True
+#     MAIL_USERNAME = environ["MAIL_USERNAME"]
+#     MAIL_PASSWORD = environ["MAIL_PASSWORD"]
+#     MAIL_DEFAULT_SENDER = environ["MAIL_DEFAULT_SENDER"]
 
 # The default user self registration role
-AUTH_USER_REGISTRATION_ROLE = "ReadOnly"
+# AUTH_USER_REGISTRATION_ROLE = "ReadOnly"
 
-FAB_ROLES = {
-    "ReadOnly": [
-        [".*", "can_list"],
-        [".*", "can_show"],
-        [".*", "menu_access"],
-        [".*", "can_get"],
-        [".*", "can_info"],
-    ],
-    "ReadWrite": [
-        [".*", "can_list"],
-        [".*", "can_show"],
-        [".*", "can_edit"],
-        [".*", "can_delete"],
-        [".*", "can_download"],
-        [".*", "menu_access"],
-        [".*", "can_get"],
-        [".*", "can_put"],
-        [".*", "can_post"],
-        [".*", "can_delete"],
-        [".*", "can_info"],
-    ],
-}
+# FAB_ROLES = {
+#     "ReadOnly": [
+#         [".*", "can_list"],
+#         [".*", "can_show"],
+#         [".*", "menu_access"],
+#         [".*", "can_get"],
+#         [".*", "can_info"],
+#     ],
+#     "ReadWrite": [
+#         [".*", "can_list"],
+#         [".*", "can_show"],
+#         [".*", "can_edit"],
+#         [".*", "can_delete"],
+#         [".*", "can_download"],
+#         [".*", "menu_access"],
+#         [".*", "can_get"],
+#         [".*", "can_put"],
+#         [".*", "can_post"],
+#         [".*", "can_delete"],
+#         [".*", "can_info"],
+#     ],
+# }
 
-FAB_ROLES_MAPPING = {1: "ReadOnly", 2: "ReadWrite"}
+# FAB_ROLES_MAPPING = {1: "ReadOnly", 2: "ReadWrite"}
 
 # When using LDAP Auth, setup the ldap server
 # AUTH_LDAP_SERVER = "ldap://ldapserver.new"
