@@ -16,3 +16,18 @@
   bottom: 0;
   width: 100%;
 }
+
+.editor-sm-body .ck-placeholder,
+.editor-sm-body .ck-editor__editable_inline {
+  min-height: 15px;
+}
+
+.editor-md-body .ck-placeholder,
+.editor-md-body .ck-editor__editable_inline {
+  min-height: 200px;
+}
+
+.editor-lg-body .ck-placeholder,
+.editor-lg-body .ck-editor__editable_inline {
+  min-height: 600px;
+}

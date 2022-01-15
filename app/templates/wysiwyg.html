@@ -1,14 +1,447 @@
-{% extends "appbuilder/base.html" %}
-{% block content %}
-<div id="editor">This is some sample content.</div>
+{% extends "appbuilder/base.html" %} {% block content %}
+
+<div class="container">
+  <center><h2>Create New Map Article</h2></center>
+  <form class="form-horizontal" role="form" id="example-form" action="#">
+    <div class="form-group">
+      <h3>Article Details</h3>
+      <label for="inputDateField" class="col-sm-2 control-label">Date</label>
+      <div class="col-sm-10">
+        <input
+          name="inputDateField"
+          id="inputDateField"
+          type="date"
+          class="form-control"
+          value="2022-01-01"
+        />
+      </div>
+      <label for="inputTitleField" class="col-sm-2 control-label">Title</label>
+      <div class="col-sm-10">
+        <input
+          name="inputTitleField"
+          id="inputTitleField"
+          type="text"
+          class="form-control"
+          value="Article title"
+        />
+      </div>
+      <label for="inputSubtitleField" class="col-sm-2 control-label"
+        >Subtitle</label
+      >
+      <div class="col-sm-10">
+        <input
+          name="inputSubtitleField"
+          id="inputSubtitleField"
+          type="text"
+          class="form-control"
+          value="Article subtitle"
+        />
+      </div>
+      <label for="inputThumbnailField" class="col-sm-2 control-label"
+        >Thumbnail</label
+      >
+      <div class="col-sm-10">
+        <input
+          name="inputThumbnailField"
+          id="inputThumbnailField"
+          type="text"
+          class="form-control"
+          placeholder="Path to the thumbnail image"
+        />
+      </div>
+      <label for="inputShareImageField" class="col-sm-2 control-label"
+        >Preview</label
+      >
+      <div class="col-sm-10">
+        <input
+          name="inputShareImageField"
+          id="inputShareImageField"
+          type="text"
+          class="form-control"
+          placeholder="Shown when sharing the article"
+        />
+      </div>
+      <label for="inputAuthorField" class="col-sm-2 control-label"
+        >Author</label
+      >
+      <div class="col-sm-10">
+        <input
+          name="inputAuthorField"
+          id="inputAuthorField"
+          type="text"
+          class="form-control"
+          placeholder="Yeah, that means you..."
+        />
+      </div>
+      <label for="inputSummaryField" class="col-sm-2 control-label"
+        >Summary</label
+      >
+      <div class="col-sm-10">
+        <input
+          name="inputSummaryField"
+          id="inputSummaryField"
+          type="text"
+          class="form-control"
+          placeholder="Article Summary"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <center><h4>Additional Metadata</h4></center>
+      <textarea
+        name="inputMetadataField"
+        id="inputMetadataField"
+        type="textarea"
+        class="form-control"
+        placeholder="customKey: &#34;customValue&#34;&#10;anotherKey: &#34;anotherValue&#34;&#10;finalKey: false"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <h3>Extent</h3>
+      <label for="inputLongField" class="col-sm-2 control-label"
+        >Longitude</label
+      >
+      <div class="col-sm-10">
+        <input
+          name="inputLongField"
+          id="inputLongField"
+          type="number"
+          step="0.001"
+          class="form-control"
+          placeholder="-29.37"
+        />
+      </div>
+      <label for="inputLatField" class="col-sm-2 control-label">Latitude</label>
+      <div class="col-sm-10">
+        <input
+          name="inputLatField"
+          id="inputLatField"
+          type="number"
+          step="0.001"
+          class="form-control"
+          placeholder="31.0"
+        />
+      </div>
+      <label for="inputZoomField" class="col-sm-2 control-label"
+        >Zoom Level</label
+      >
+      <div class="col-sm-10">
+        <select name="inputZoomField" id="inputZoomField" class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+          <option>18</option>
+          <option>19</option>
+          <option>20</option>
+          <option>21</option>
+          <option>22</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <h3>Map Options</h3>
+      <label for="inputTitleField" class="col-sm-2 control-label"
+        >WMS URL</label
+      >
+      <div class="col-sm-10">
+        <input
+          name="inputTitleField"
+          id="inputTitleField"
+          type="text"
+          class="form-control"
+          placeholder="https://osgs.kartoza.com/ogc/YourMapService"
+        />
+      </div>
+      <div class="col-sm-offset-2 col-sm-3">
+        <div class="checkbox">
+          <label>
+            <input name="inputTiledField" type="checkbox" checked /> Tiled
+          </label>
+          <button
+            data-toggle="modal"
+            data-target="#inputTiledModal"
+            class="btn btn-default"
+            role="button"
+            style="margin-left: 15px; padding: 0px"
+          >
+            <i class="fa fa-fw fa-info-circle"></i>
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-3">
+        <div class="checkbox">
+          <label>
+            <input name="inputBasemapField" type="checkbox" /> Basemap
+          </label>
+          <button
+            data-toggle="modal"
+            data-target="#inputBasemapModal"
+            class="btn btn-default"
+            role="button"
+            style="margin-left: 15px; padding: 0px"
+          >
+            <i class="fa fa-fw fa-info-circle"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <center><h4>Map Server</h4></center>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-offset-2 col-sm-3">
+            <input
+              type="radio"
+              id="QgisMapServer"
+              name="inputMapServer"
+              value="qgis"
+              checked
+            />
+            <label for="QgisMapServer">QGIS</label>
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="radio"
+              id="MapserverMapServer"
+              name="inputMapServer"
+              value="mapserver"
+            />
+            <label for="MapserverMapServer">Mapserver</label>
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="radio"
+              id="GeoserverMapServer"
+              name="inputMapServer"
+              value="geoserver"
+            />
+            <label for="GeoserverMapServer">Geoserver</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <h3>Tags</h3>
+      <label for="inputTagsField" class="col-sm-2 control-label">Tags</label>
+      <div class="col-sm-10">
+        <input
+          name="inputTagsField"
+          id="inputTagsField"
+          type="text"
+          class="form-control"
+          placeholder="Insert a comma separated list of categories, e.g. gis, 3d, howto, qgis"
+        />
+      </div>
+      <label for="inputCategoriesField" class="col-sm-2 control-label"
+        >Categories</label
+      >
+      <div class="col-sm-10">
+        <input
+          name="inputCategoriesField"
+          id="inputCategoriesField"
+          type="text"
+          class="form-control"
+          placeholder="Insert a comma separated list of categories, e.g. Map, Featured"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="editor-markdown-field1" class="col-12 control-label"
+        >Field 1</label
+      >
+      <div class="col-12 editor-sm-body">
+        <input
+          name="editor-markdown-field1"
+          id="editor-markdown-field1"
+          type="text"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="editor-markdown-field2" class="col-12 control-label"
+        >Field 2</label
+      >
+      <div class="col-12 editor-md-body">
+        <input
+          name="editor-markdown-field2"
+          id="editor-markdown-field2"
+          type="text"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="editor-markdown-field3" class="col-12 control-label"
+        >Field 3</label
+      >
+      <div class="col-12 editor-lg-body">
+        <input
+          name="editor-markdown-field3"
+          id="editor-markdown-field3"
+          type="text"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-10 col-sm-2">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Modals -->
+<div
+  class="modal fade"
+  id="inputTiledModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modalLabelLarge"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modalLabelLarge">Tiled Maps</h4>
+      </div>
+
+      <div class="modal-body">
+        The tiled option determines whether or not the map will be cut into
+        tiles by the map service. In many instances this is more performant and
+        efficient, however it can lead to increased rendering errors and
+        artifacts such as clipped or duplicated labels.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="inputBasemapModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modalLabelLarge"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modalLabelLarge">Include Basemap</h4>
+      </div>
+
+      <div class="modal-body">
+        Determines whether or not to include Open Street Map as a base layer in
+        the webmap.
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-        ClassicEditor
-                .create( document.querySelector( '#editor' ) )
-                .then( editor => {
-                        console.log( editor );
-                } )
-                .catch( error => {
-                        console.error( error );
-                } );
+  $("#example-form").on("submit", function () {
+    $(this).find('input[name="editor-markdown-field1"]').val(field1.getData());
+    var arr = $(this).serializeArray();
+    console.log(arr);
+    return false;
+  });
+
+  $(document).ready(function () {
+    $("#inputDateField").val(new Date().toISOString().substr(0, 10));
+    $("#inputZoomField").val(15);
+  });
+
+  function createWysiwygMarkdownEditor(
+    editor,
+    editorObject,
+    placeholderContent = "Add content to start creating in markdown..."
+  ) {
+    ClassicEditor.create(document.querySelector(editor), {
+      toolbar: {
+        items: [
+          "heading",
+          "|",
+          "bold",
+          "italic",
+          "underline",
+          "strikethrough",
+          "|",
+          "bulletedList",
+          "numberedList",
+          "link",
+          "blockQuote",
+          "|",
+          "code",
+          "codeBlock",
+          "|",
+          "insertImage",
+          "mediaEmbed",
+          "|",
+          "insertTable",
+          "specialCharacters",
+          "|",
+          "undo",
+          "redo",
+          "sourceEditing",
+        ],
+        shouldNotGroupWhenFull: true,
+      },
+      language: "en",
+      placeholder: placeholderContent,
+    })
+      .then((editor) => {
+        // console.log( editor );
+        window[editorObject] = editor;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+  field1 = {};
+  createWysiwygMarkdownEditor("#editor-markdown-field1", "field1");
+  field2 = {};
+  createWysiwygMarkdownEditor(
+    "#editor-markdown-field2",
+    "field2",
+    "Add more content to a larger window..."
+  );
+  field3 = {};
+  createWysiwygMarkdownEditor(
+    "#editor-markdown-field3",
+    "field3",
+    "Now we're getting somewhere!!!"
+  );
 </script>
 {% endblock %}
