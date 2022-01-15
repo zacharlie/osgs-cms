@@ -12,12 +12,12 @@ from flask_appbuilder import (
 from . import appbuilder, db
 
 
-class DefaultPagesView(BaseView):
-    route_base = "/"
+class AboutView(BaseView):
+    route_base = "/about"
 
-    default_view = "aboutPage"
+    # default_view = "aboutPage"
 
-    @expose("/about")
+    @expose("/")
     def aboutPage(self):
         return render_template(
             "about.html",
@@ -25,17 +25,17 @@ class DefaultPagesView(BaseView):
             appbuilder=appbuilder,
         )
 
-    @expose("/wysiwyg")
-    def wysiwygPage(self):
-        return render_template(
-            "wysiwyg.html",
-            base_template=appbuilder.base_template,
-            appbuilder=appbuilder,
-        )
+    # @expose("/wysiwyg")
+    # def wysiwygPage(self):
+    #     return render_template(
+    #         "wysiwyg.html",
+    #         base_template=appbuilder.base_template,
+    #         appbuilder=appbuilder,
+    #     )
 
 
-appbuilder.add_view_no_menu(DefaultPagesView())
-# appbuilder.add_view(DefaultPagesView, "About")
+appbuilder.add_view_no_menu(AboutView())
+# appbuilder.add_view(AboutView, "About")
 
 # Error codes
 
