@@ -5,14 +5,6 @@ from flask_appbuilder import AppBuilder, SQLA
 
 from app.index import DefaultIndexView
 
-"""
- add js modules support
-"""
-
-# import mimetypes
-
-# mimetypes.add_type("application/javascript", ".js")
-# mimetypes.add_type("application/javascript", ".mjs")
 
 """
  Logging configuration
