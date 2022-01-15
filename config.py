@@ -14,6 +14,9 @@ load_dotenv()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+# Application root prefix, e.g. "/app/cms"
+APPLICATION_ROOT = ""
+
 # Your App secret key
 # SECRET_KEY = "\2\1thisismyscretkey\1\2\e\y\y\h"
 SECRET_KEY = urandom(32)
