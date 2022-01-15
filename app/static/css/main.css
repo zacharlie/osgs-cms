@@ -8,3 +8,11 @@
   background-color: #f8f8f8;
   z-index: 1;
 }
+.osgs-footer-spacer {
+  /* set footer spacer */
+  position: block;
+  height: 4rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
