@@ -1,3 +1,18 @@
+/* navbar colors override */
+.navbar,
+.nav .navbar-nav,
+.nav .navbar-inverse {
+  background-color: #95a5a6;
+}
+.navbar .navbar-nav > .open > a,
+.navbar .navbar-nav > .open > a:focus {
+  background-color: #778485;
+}
+/* navbar a:hover color override with important */
+/* .navbar a:hover {
+  color: #edb73e !important;
+} */
+
 .osgs-footer {
   /* set fixed footer */
   position: fixed;
@@ -8,6 +23,7 @@
   background-color: #f8f8f8;
   z-index: 1;
 }
+
 .osgs-footer-spacer {
   /* set footer spacer */
   position: block;
