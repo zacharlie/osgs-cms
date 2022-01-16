@@ -13,6 +13,13 @@
 /* .navbar a:hover {
   color: #edb73e !important;
 } */
+.navbar-inverse .navbar-toggle {
+  border-color: #778485 !important;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #778485 !important;
+}
 
 .osgs-footer a {
   color: #778485;
