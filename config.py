@@ -17,6 +17,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Application root prefix, e.g. "/app/cms"
 APPLICATION_ROOT = ""
+# track modifications
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 # Your App secret key
 # SECRET_KEY = "\2\1thisismyscretkey\1\2\e\y\y\h"
