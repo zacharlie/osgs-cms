@@ -27,14 +27,57 @@
 
 <li class="dropdown">
   <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+    <i class="fa fa-list"></i>&nbsp; {{_("Articles")}}<b class="caret"></b
+  ></a>
+  <ul class="dropdown-menu">
+    {% set links = { "Create Post":"#", "Create Map":"#", "-":"", "Edit
+    Articles":"#" } %} {% for key, value in links.items() %}{% if key == '-' %}
+    <li class="divider"></li>
+    {% else %}
+    <li><a href="{{ value }}">{{ key }}</a></li>
+    {% endif %}{% endfor %}
+  </ul>
+</li>
+
+<li class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+    <i class="fa fa-folder-open"></i>&nbsp; {{_("Operations")}}<b
+      class="caret"
+    ></b
+  ></a>
+  <ul class="dropdown-menu">
+    {% set links = { "QGIS":"#", "Node Red":"#", "Metabase":"#", "-":"",
+    "Manage":"#" } %} {% for key, value in links.items() %}{% if key == '-' %}
+    <li class="divider"></li>
+    {% else %}
+    <li><a href="{{ value }}">{{ key }}</a></li>
+    {% endif %}{% endfor %}
+  </ul>
+</li>
+
+<li class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+    <i class="fa fa-paste"></i>&nbsp; {{_("Blueprints")}}<b class="caret"></b
+  ></a>
+  <ul class="dropdown-menu">
+    {% set links = { "Deploy":"#", "-":"", "Manage":"#", } %} {% for key, value
+    in links.items() %}{% if key == '-' %}
+    <li class="divider"></li>
+    {% else %}
+    <li><a href="{{ value }}">{{ key }}</a></li>
+    {% endif %}{% endfor %}
+  </ul>
+</li>
+
+<li class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
     <i class="fa fa-link"></i>&nbsp; {{_("Services")}}<b class="caret"></b
   ></a>
   <ul class="dropdown-menu">
-    {% set links = { "Home":"https://osgs.kartoza.com", "-":"", "Maps":"#",
-    "Links icon":"#", "File Browser":"#", "Geoserver":"#", "Jupyter
-    Notebook":"#", "Mapproxy":"#", "Metabase":"#", "Node Red":"#",
-    "Postgrest":"#", "Swagger":"#", "Twitter":"#", } %} {% for key, value in
-    links.items() %}{% if key == '-' %}
+    {% set links = { "Home":"https://osgs.kartoza.com", "-":"", "File
+    Browser":"#", "Geoserver":"#", "Jupyter Notebook":"#", "Mapproxy":"#",
+    "Metabase":"#", "Node Red":"#", "Postgrest":"#", "Swagger":"#",
+    "Twitter":"#", } %} {% for key, value in links.items() %}{% if key == '-' %}
     <li class="divider"></li>
     {% else %}
     <li><a href="{{ value }}">{{ key }}</a></li>
