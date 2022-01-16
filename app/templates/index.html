@@ -1,7 +1,7 @@
 {% extends "appbuilder/base.html" %} {% block content %}
 
 <div class="jumbotron">
-  <div class="container">
+  <div class="container well">
     <h1><center>{{_("OSGS SL")}}</center></h1>
     <pre>
                               (  ) (@@) ( )  (@)  ()    @@    O     @     O     @      O
@@ -17,8 +17,71 @@
            //// \_/      \_/       (O)       (O)        (O)        (O)       (O)        (O)       (O)        (O)
 </pre
     >
-    <h2><center>{{_('Welcome')}}</center></h2>
-    <div class="well">Go get creative!</div>
+    <h2><center>{{_('Quick Actions')}}</center></h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <a
+            class="btn btn-primary btn-block"
+            style="padding: 2rem"
+            href="#"
+            role="button"
+          >
+            <div class="row">
+              <i class="fa fa-lg fa-map" style="padding-bottom: 1rem"></i>
+            </div>
+            <div class="row">
+              <span>Create Map Article</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a
+            class="btn btn-default btn-block"
+            style="padding: 2rem"
+            href="#"
+            role="button"
+          >
+            <div class="row">
+              <i class="fa fa-lg fa-file-text" style="padding-bottom: 1rem"></i>
+            </div>
+            <div class="row">
+              <span>Create Text Article</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a
+            class="btn btn-primary btn-block"
+            style="padding: 2rem"
+            href="#"
+            role="button"
+          >
+            <div class="row">
+              <i class="fa fa-lg fa-compass" style="padding-bottom: 1rem"></i>
+            </div>
+            <div class="row">
+              <span>Publish QGIS Project</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a
+            class="btn btn-default btn-block"
+            style="padding: 2rem"
+            href="#"
+            role="button"
+          >
+            <div class="row">
+              <i class="fa fa-lg fa-rocket" style="padding-bottom: 1rem"></i>
+            </div>
+            <div class="row">
+              <span>Add Blueprint</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
