@@ -14,8 +14,7 @@ from . import appbuilder, db
 
 class AboutView(BaseView):
     route_base = "/about"
-
-    # default_view = "aboutPage"
+    default_view = "aboutPage"
 
     @expose("/")
     def aboutPage(self):
@@ -25,17 +24,42 @@ class AboutView(BaseView):
             appbuilder=appbuilder,
         )
 
-    # @expose("/wysiwyg")
-    # def wysiwygPage(self):
-    #     return render_template(
-    #         "wysiwyg.html",
-    #         base_template=appbuilder.base_template,
-    #         appbuilder=appbuilder,
-    #     )
-
 
 appbuilder.add_view_no_menu(AboutView())
 # appbuilder.add_view(AboutView, "About")
+
+
+class ArticlesView(BaseView):
+    route_base = "/posts"
+    default_view = "editPosts"
+
+    @expose("/")
+    def editPosts(self):
+        return render_template(
+            "posts/manage.html",
+            base_template=appbuilder.base_template,
+            appbuilder=appbuilder,
+        )
+
+    @expose("/create/post")
+    def createPost(self):
+        return render_template(
+            "posts/wysiwyg.html",
+            base_template=appbuilder.base_template,
+            appbuilder=appbuilder,
+        )
+
+    @expose("/create/map")
+    def createPost(self):
+        return render_template(
+            "posts/wysiwyg.html",
+            base_template=appbuilder.base_template,
+            appbuilder=appbuilder,
+        )
+
+
+appbuilder.add_view_no_menu(ArticlesView())
+# appbuilder.add_view(ArticlesView, "Articles")
 
 # Error codes
 
