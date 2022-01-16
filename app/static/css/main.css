@@ -28,6 +28,7 @@
 .osgs-footer {
   /* set fixed footer */
   position: fixed;
+  padding-top: 4px;
   height: 3rem;
   left: 0;
   bottom: 0;
