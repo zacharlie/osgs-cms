@@ -5,6 +5,7 @@
   background-color: #95a5a6;
 }
 .navbar .navbar-nav > .open > a,
+.navbar .navbar-nav > .open > a:hover,
 .navbar .navbar-nav > .open > a:focus {
   background-color: #778485;
 }
@@ -12,6 +13,10 @@
 /* .navbar a:hover {
   color: #edb73e !important;
 } */
+
+.osgs-footer a {
+  color: #778485;
+}
 
 .osgs-footer {
   /* set fixed footer */
