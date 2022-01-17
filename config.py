@@ -16,8 +16,9 @@ from os import urandom, environ
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Application root prefix, e.g. "/app/cms"
-APPLICATION_ROOT = ""
-# track modifications
+APPLICATION_ROOT = environ["APPLICATION_ROOT"] if "APPLICATION_ROOT" in environ else "/"
+
+# don't track modifications
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 # Your App secret key
