@@ -1,0 +1,6 @@
+site_name: OSGS-sl Docs
+site_url: https://zacharlie.github.io/osgs-sl
+nav:
+    - Home: index.md
+    - About: about.md
+theme: readthedocs

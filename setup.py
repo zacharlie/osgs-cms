@@ -7,6 +7,7 @@ setup(
     install_requires=["Flask-AppBuilder==3.4.3", "Pillow==9.0.0"],
     extras_require={
         "dev": ["black", "python-dotenv", "pytest"],
+        "docs": ["mkdocs"],
     },
     python_requires="~=3.10",
 )
