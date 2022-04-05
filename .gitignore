@@ -1,5 +1,6 @@
 # exclude venv
 ./env/
+./venv/
 
 # datadir
 /app/data/
