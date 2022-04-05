@@ -1,6 +1,6 @@
-# OSGS-sl
+# OSGS-CMS
 
-"An OSGS CMS" (yeah, it might be renamed...)
+The Open Source Geospatial Stack Content Management System (formerly osgs-sl)
 
 The OSGS-sl project is the "steam locomotive" for the [Open Source Geospatial Stack (OSGS)](https://github.com/kartoza/osgs).
 
